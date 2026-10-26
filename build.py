@@ -17,7 +17,7 @@ IMG = DIST / "assets" / "img"
 
 # Image slot used in index.html -> original photo in photos/
 SLOTS = {
-    "hero-marina-bay": "2867e260-image.jpg",
+    "hero-supertree-night": "7b5fbe19-image.jpg",
     "strip-supertrees": "35612b21-image.jpg",
     "strip-marina-bay-day": "4a7806c0-image.jpg",
     "strip-jewel": "a201bd3c-image.jpg",
@@ -42,7 +42,7 @@ SLOTS = {
     "hl-flyer": "fea3e8d1-image.jpg",
     "hl-night-lights": "9916a914-image.jpg",
     "hl-bayfront-night": "fd34662d-image.jpg",
-    "hl-supertree-close": "7b5fbe19-image.jpg",
+    "hl-supertrees-above": "eed7ad4b-image.jpg",
 }
 
 # Book covers: add photos/cover-guide.jpg (or .png) and photos/cover-nomad.jpg
