@@ -121,8 +121,9 @@ h3 { font-size: 1.6rem; font-weight: 800; }
 .stats span { display: block; margin-top: 10px; color: var(--muted); font-size: 0.92rem; }
 
 /* Spots & features */
-.spots { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-.spots li { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(6px); border-radius: var(--radius); padding: 18px 22px; }
+.spots { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid rgba(255, 255, 255, 0.28); }
+.spots li { position: relative; padding: 18px 0 18px 26px; border-bottom: 1px solid rgba(255, 255, 255, 0.28); }
+.spots li::before { content: ""; position: absolute; left: 0; top: 1.75em; width: 12px; height: 3px; background: var(--red); }
 .spots strong { display: block; font-size: 1.05rem; }
 .spots span { font-size: 0.92rem; opacity: 0.88; }
 .features { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
