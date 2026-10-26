@@ -14,6 +14,7 @@
   --red: #c8202f;
   --red-dark: #a51a27;
   --white: #fff;
+  --teal: #0c2a30;
   --sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --radius: 6px;
@@ -175,6 +176,18 @@ h3 { font-size: 1.6rem; font-weight: 800; }
 .book .series { margin: 26px 0 6px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
 .book h3 { font-size: 1.5rem; }
 .book .subtitle { margin: 8px 0 14px; }
+
+/* Guides section: deep teal with a faint photo */
+.section.guides { position: relative; overflow: hidden; background: var(--teal); color: var(--white); }
+.guides-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; opacity: 0.32; }
+.guides-fade { position: absolute; inset: 0; background: linear-gradient(180deg, var(--teal) 0%, rgba(12, 42, 48, 0.55) 30%, rgba(12, 42, 48, 0.72) 70%, var(--teal) 100%); }
+.guides .container { position: relative; }
+.guides .lead { color: rgba(255, 255, 255, 0.85); }
+.guides .book .subtitle { color: rgba(255, 255, 255, 0.75); }
+.guides .soon-label { color: rgba(255, 255, 255, 0.8); border-color: rgba(255, 255, 255, 0.4); }
+.guides .btn.outline { border-color: rgba(255, 255, 255, 0.85); color: var(--white); }
+.guides .btn.outline:hover { background: var(--white); color: var(--ink); }
+.guides .cover { box-shadow: 0 28px 60px rgba(0, 0, 0, 0.55); }
 
 /* Checklist */
 .signup { display: flex; gap: 10px; max-width: 520px; margin: 30px auto 0; }
@@ -517,7 +530,9 @@ h3 { font-size: 1.6rem; font-weight: 800; }
   </section>
 
   <!-- THE GUIDES -->
-  <section class="section light" id="guides">
+  <section class="section guides" id="guides">
+    <img class="guides-bg" src="assets/img/guides-mbs-teal-1800.jpg" srcset="assets/img/guides-mbs-teal-800.jpg 800w, assets/img/guides-mbs-teal-1800.jpg 1800w" sizes="100vw" alt="" width="1512" height="2016" loading="lazy" decoding="async">
+    <div class="guides-fade"></div>
     <div class="container">
       <p class="eyebrow center">The guides</p>
       <h2 class="center">Visit or stay.</h2>

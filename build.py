@@ -43,6 +43,7 @@ SLOTS = {
     "hl-night-lights": "9916a914-image.jpg",
     "hl-bayfront-night": "fd34662d-image.jpg",
     "hl-supertrees-above": "eed7ad4b-image.jpg",
+    "guides-mbs-teal": "528ebd4c-image.jpg",
 }
 
 # Book covers: add photos/cover-guide.jpg (or .png) and photos/cover-nomad.jpg
