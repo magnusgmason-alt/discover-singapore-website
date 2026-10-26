@@ -17,12 +17,12 @@ IMG = DIST / "assets" / "img"
 
 # Image slot used in index.html -> original photo in photos/
 SLOTS = {
-    "hero-supertree-night": "7b5fbe19-image.jpg",
+    "hero-skyline-night": "14cb7489-image.jpg",
     "strip-supertrees": "35612b21-image.jpg",
     "strip-marina-bay-day": "4a7806c0-image.jpg",
     "strip-jewel": "a201bd3c-image.jpg",
     "strip-artscience": "fa2abd11-image.jpg",
-    "editions-mbs-night": "ab39ff59-image.jpg",
+    "editions-supertree-night": "7b5fbe19-image.jpg",
     "guide-cbd-night": "7a58f5e0-image.jpg",
     "nomad-cbd-night": "5b797241-image.jpg",
     "garden-barrage": "7d01a487-image.jpg",
