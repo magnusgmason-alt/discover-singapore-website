@@ -1,0 +1,689 @@
+<title>Discover Singapore · The Complete Singapore Travel Guide</title>
+<link rel="canonical" href="https://discoversingapore.org/">
+<meta name="description" content="Discover Singapore: the complete travel guide to Singapore, with an expat and digital nomad edition to follow.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,500&amp;display=swap" rel="stylesheet">
+<style>
+/* Discover Singapore — styles
+   Brand tokens are taken from the book covers: bold geometric sans,
+   high-contrast serif accent, red rule. Change them here. */
+:root {
+  --ink: #0e1317;
+  --paper: #f7f5f1;
+  --stone: #ebe7df;
+  --muted: #5a646b;
+  --red: #c8202f;
+  --red-dark: #a51a27;
+  --white: #fff;
+  --sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --radius: 6px;
+  --header-h: 72px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; line-height: 1.08; letter-spacing: -0.02em; }
+p { margin: 0 0 1em; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container.narrow, .narrow { max-width: 760px; }
+.center { text-align: center; }
+.center.narrow { margin-left: auto; margin-right: auto; }
+
+/* Type */
+.eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 18px; }
+.eyebrow.light { color: rgba(255, 255, 255, 0.85); }
+h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); font-weight: 800; margin-bottom: 22px; }
+h3 { font-size: 1.6rem; font-weight: 800; }
+.lead { font-size: clamp(1.02rem, 1.5vw, 1.2rem); color: var(--muted); max-width: 62ch; }
+.center .lead, .lead.center { margin-left: auto; margin-right: auto; }
+.on-photo .lead { color: rgba(255, 255, 255, 0.9); }
+.fine { font-size: 0.85rem; color: var(--muted); margin-top: 14px; }
+.fine.light { color: rgba(255, 255, 255, 0.8); }
+.link-arrow { display: inline-block; margin-top: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; border-bottom: 2px solid var(--red); padding-bottom: 2px; }
+.link-arrow.dark { color: var(--white); border-color: var(--red); }
+
+/* Buttons */
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn-row.center-row { justify-content: center; }
+.btn { display: inline-block; padding: 14px 26px; border-radius: 999px; font: 700 0.9rem var(--sans); letter-spacing: 0.04em; text-decoration: none; border: 2px solid transparent; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s; }
+.btn:hover { transform: translateY(-1px); }
+.btn.primary { background: var(--red); color: var(--white); }
+.btn.primary:hover { background: var(--red-dark); }
+.btn.ghost { border-color: rgba(255, 255, 255, 0.85); color: var(--white); }
+.btn.ghost:hover { background: var(--white); color: var(--ink); }
+.btn.outline { border-color: var(--ink); color: var(--ink); }
+.btn.outline:hover { background: var(--ink); color: var(--white); }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+
+/* Header */
+.site-header { position: fixed; inset: 0 0 auto 0; z-index: 50; height: var(--header-h); display: flex; align-items: center; color: var(--white); transition: background 0.25s, box-shadow 0.25s; }
+.site-header.solid { background: rgba(14, 19, 23, 0.94); backdrop-filter: blur(8px); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo { text-decoration: none; font-weight: 500; font-size: 1.15rem; letter-spacing: -0.03em; white-space: nowrap; }
+.logo b { font-weight: 800; }
+.logo i { font-style: normal; color: var(--red); font-weight: 800; }
+.nav { display: flex; align-items: center; gap: 22px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; }
+.nav > a { text-decoration: none; opacity: 0.92; }
+.nav > a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 6px; }
+.dropdown { position: relative; }
+.dropdown-btn { background: none; border: 0; color: inherit; font: inherit; cursor: pointer; padding: 6px 0; opacity: 0.92; }
+.dropdown-menu { position: absolute; top: 100%; left: -14px; min-width: 200px; background: var(--ink); border-radius: var(--radius); padding: 8px 0; display: none; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35); }
+.dropdown.open .dropdown-menu, .dropdown:hover .dropdown-menu { display: block; }
+.dropdown.lang .dropdown-menu { left: auto; right: -10px; }
+.dropdown-menu a, .dropdown-menu .soon { display: block; padding: 9px 18px; text-decoration: none; font-weight: 500; }
+.dropdown-menu a:hover { background: rgba(255, 255, 255, 0.1); }
+.dropdown-menu .soon { opacity: 0.45; cursor: default; }
+.nav-toggle { display: none; background: none; border: 0; width: 44px; height: 44px; cursor: pointer; position: relative; }
+.nav-toggle span { position: absolute; left: 10px; right: 10px; height: 2px; background: var(--white); transition: transform 0.2s, top 0.2s; }
+.nav-toggle span:first-child { top: 17px; }
+.nav-toggle span:last-child { top: 25px; }
+.nav-toggle[aria-expanded="true"] span:first-child { top: 21px; transform: rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:last-child { top: 21px; transform: rotate(-45deg); }
+
+/* Hero */
+.hero { position: relative; min-height: 100svh; display: flex; align-items: center; color: var(--white); overflow: hidden; background: var(--ink); }
+.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero .bg { object-position: 50% 50%; }
+.shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8, 12, 16, 0.5) 0%, rgba(8, 12, 16, 0.12) 38%, rgba(8, 12, 16, 0.6) 100%); }
+.shade.heavy { background: linear-gradient(180deg, rgba(8, 12, 16, 0.58), rgba(8, 12, 16, 0.66)); }
+.hero-inner { position: relative; padding-top: calc(var(--header-h) + 24px); padding-bottom: 96px; }
+.hero h1 { font-size: clamp(2.8rem, 10.5vw, 8rem); font-weight: 500; letter-spacing: -0.055em; line-height: 0.95; }
+.hero h1 b { font-weight: 800; }
+.hero h1 i { font-style: normal; color: var(--red); }
+.hero .rule { display: block; width: 72px; height: 5px; background: var(--red); margin: 30px 0 24px; }
+.hero-sub { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(1.3rem, 3vw, 2rem); margin-bottom: 10px; }
+.hero-regions { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.88; }
+.scroll-cue { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); color: var(--white); text-decoration: none; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; opacity: 0.85; }
+.scroll-cue::after { content: ""; display: block; width: 1px; height: 34px; background: currentColor; margin: 10px auto 0; }
+
+/* Strip */
+.strip { display: grid; grid-template-columns: repeat(4, 1fr); }
+.strip img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+/* Sections */
+.section { padding: clamp(64px, 9vw, 120px) 0; }
+.section.light { background: var(--paper); }
+.section.stone { background: var(--stone); }
+.photo-section { position: relative; padding: clamp(80px, 11vw, 150px) 0; color: var(--white); overflow: hidden; background: var(--ink); }
+.photo-section.tall { padding: clamp(110px, 16vw, 210px) 0; }
+.on-photo { position: relative; }
+.split { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.split-light { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; text-align: center; }
+.stats strong { display: block; font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; letter-spacing: -0.04em; color: var(--red); line-height: 1; }
+.stats span { display: block; margin-top: 10px; color: var(--muted); font-size: 0.92rem; }
+
+/* Spots & features */
+.spots { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.spots li { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(6px); border-radius: var(--radius); padding: 18px 22px; }
+.spots strong { display: block; font-size: 1.05rem; }
+.spots span { font-size: 0.92rem; opacity: 0.88; }
+.features { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+.features li { position: relative; padding-left: 22px; font-weight: 600; font-size: 0.95rem; }
+.features li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 10px; height: 3px; background: var(--red); }
+
+/* Book feature */
+.book-feature { display: grid; grid-template-columns: 360px 1fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+.book-feature.reverse { grid-template-columns: 1fr 360px; }
+.book-feature.reverse .cover { order: 2; }
+.cover { display: block; box-shadow: 0 28px 60px rgba(14, 19, 23, 0.35); border-radius: 3px; overflow: hidden; transition: transform 0.3s; }
+.cover:hover { transform: translateY(-4px) rotate(-0.4deg); }
+.cover img { width: 100%; }
+.book-feature h3 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); }
+.book-feature h3 small { display: block; font-family: var(--serif); font-weight: 600; font-size: 0.62em; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 8px; }
+.subtitle { font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: var(--muted); margin-top: 12px; }
+
+/* Journal */
+.journal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+.journal-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 6px 24px rgba(14, 19, 23, 0.08); display: flex; flex-direction: column; }
+.journal-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.journal-card > div { padding: 22px 24px 26px; }
+.journal-card h3 { font-size: 1.15rem; line-height: 1.25; margin: 8px 0 10px; letter-spacing: -0.01em; }
+.journal-card p { color: var(--muted); font-size: 0.92rem; margin-bottom: 12px; }
+.tags { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); }
+.soon-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border: 1px solid rgba(14, 19, 23, 0.25); border-radius: 999px; padding: 4px 12px; }
+
+/* Highlight cards */
+.card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+.card { position: relative; display: block; border-radius: var(--radius); overflow: hidden; color: var(--white); text-decoration: none; aspect-ratio: 4 / 5; background: var(--ink); }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.card:hover img { transform: scale(1.06); }
+.card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8, 12, 16, 0) 45%, rgba(8, 12, 16, 0.82)); }
+.card-tag { position: absolute; z-index: 1; top: 14px; left: 14px; background: var(--red); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 10px; border-radius: 3px; }
+.card-body { position: absolute; z-index: 1; left: 18px; right: 18px; bottom: 18px; }
+.card-body strong { display: block; font-size: 1.1rem; line-height: 1.2; }
+.card-body em { display: block; font-style: normal; font-size: 0.85rem; opacity: 0.88; margin-top: 4px; }
+
+/* Map */
+.map { width: 100%; max-width: 680px; height: auto; margin: 36px auto 0; display: block; }
+.map .range { fill: rgba(200, 32, 47, 0.08); stroke: var(--ink); stroke-width: 2; stroke-dasharray: 2 7; stroke-linecap: round; }
+.map .route path { fill: none; stroke: rgba(14, 19, 23, 0.22); stroke-width: 2; }
+.map .pin circle { fill: var(--red); stroke: var(--paper); stroke-width: 3; }
+.map .pin text { font: 700 14px var(--sans); fill: var(--ink); }
+
+/* Books */
+.book-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 340px)); gap: clamp(32px, 6vw, 90px); justify-content: center; margin-top: 56px; text-align: center; }
+.book .series { margin: 26px 0 6px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+.book h3 { font-size: 1.5rem; }
+.book .subtitle { margin: 8px 0 14px; }
+
+/* Checklist */
+.signup { display: flex; gap: 10px; max-width: 520px; margin: 30px auto 0; }
+.signup input { flex: 1; min-width: 0; padding: 14px 20px; border-radius: 999px; border: 2px solid transparent; font: 500 1rem var(--sans); }
+.form-msg { min-height: 1.5em; margin: 14px 0 0; font-weight: 600; }
+.check-items { list-style: none; margin: 34px auto 0; padding: 0; max-width: 640px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; text-align: left; font-size: 0.95rem; font-weight: 500; }
+.check-items li { position: relative; padding-left: 26px; }
+.check-items li::before { content: "✓"; position: absolute; left: 0; color: var(--white); font-weight: 800; }
+
+/* Series band + footer */
+.band { background: var(--ink); color: var(--white); padding: 34px 0; }
+.band-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; }
+.band p { margin: 0; opacity: 0.9; }
+.site-footer { background: #090d10; color: rgba(255, 255, 255, 0.78); padding: 56px 0 40px; font-size: 0.88rem; }
+.footer-inner { display: grid; gap: 22px; }
+.site-footer .logo { color: var(--white); font-size: 1.3rem; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 10px 26px; font-weight: 600; }
+.site-footer nav a { text-decoration: none; }
+.site-footer nav a:hover { color: var(--white); text-decoration: underline; }
+.site-footer p { margin: 0; opacity: 0.7; }
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s, transform 0.7s; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .card img, .cover, .btn { transition: none; }
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+  .journal-grid { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .split, .split-light { grid-template-columns: 1fr; }
+}
+
+/* Mobile nav */
+@media (max-width: 960px) {
+  .nav-toggle { display: block; }
+  .nav { position: fixed; inset: var(--header-h) 0 auto 0; background: var(--ink); flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 24px; max-height: calc(100svh - var(--header-h)); overflow-y: auto; display: none; font-size: 1rem; }
+  .nav.open { display: flex; }
+  .nav > a, .dropdown-btn { padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); width: 100%; text-align: left; }
+  .dropdown:hover .dropdown-menu { display: none; }
+  .dropdown.open .dropdown-menu { display: block; position: static; box-shadow: none; background: transparent; padding: 0 0 0 14px; }
+  .site-header { background: rgba(14, 19, 23, 0.94); }
+}
+
+/* Phone */
+@media (max-width: 760px) {
+  .strip { grid-template-columns: 1fr 1fr; }
+  .stats { grid-template-columns: 1fr; gap: 34px; }
+  .book-feature, .book-feature.reverse { grid-template-columns: 1fr; }
+  .book-feature .cover, .book-feature.reverse .cover { order: 0; max-width: 300px; margin: 0 auto; }
+  .features { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .card-body strong { font-size: 0.98rem; }
+  .card-body em { display: none; }
+  .book-grid { grid-template-columns: 1fr; }
+  .book .cover { max-width: 280px; margin: 0 auto; }
+  .signup { flex-direction: column; }
+  .check-items { grid-template-columns: 1fr; }
+  .hero-regions { letter-spacing: 0.08em; line-height: 1.8; }
+}
+
+</style>
+
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a class="logo" href="#top" aria-label="Discover Singapore, back to top">Discover<b>Singapore</b><i>.</i></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#guides">All guides</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false">Neighbourhoods <span aria-hidden="true">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="#map">All neighbourhoods</a>
+          <a href="#map">Marina Bay</a>
+          <a href="#map">Chinatown</a>
+          <a href="#map">Little India</a>
+          <a href="#map">Kampong Glam</a>
+          <a href="#map">Orchard Road</a>
+          <a href="#map">Sentosa</a>
+        </div>
+      </div>
+      <a href="#guide">Travel guide</a>
+      <a href="#nomads">Expats &amp; nomads</a>
+      <a href="#garden">Garden City</a>
+      <a href="#history">History</a>
+      <a href="#journal">Journal</a>
+      <a href="#checklist">Free checklist</a>
+      <div class="dropdown lang">
+        <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false">EN <span aria-hidden="true">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="#" aria-current="true">English</a>
+          <span class="soon">中文 · soon</span>
+          <span class="soon">Bahasa Melayu · soon</span>
+          <span class="soon">தமிழ் · soon</span>
+          <span class="soon">日本語 · soon</span>
+          <span class="soon">한국어 · soon</span>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="bg" src="assets/img/hero-marina-bay-1800.jpg" srcset="assets/img/hero-marina-bay-800.jpg 800w, assets/img/hero-marina-bay-1800.jpg 1800w" sizes="100vw" alt="The Marina Bay financial district lit up at night and reflected in the water" width="1800" height="1200" fetchpriority="high">
+    <div class="shade"></div>
+    <div class="container hero-inner">
+      <p class="eyebrow light">The Singapore travel guide</p>
+      <h1>Discover<br><b>Singapore</b><i>.</i></h1>
+      <span class="rule"></span>
+      <p class="hero-sub">The garden city on the equator.</p>
+      <p class="hero-regions">Marina Bay · Chinatown · Little India · Kampong Glam · Orchard · Sentosa</p>
+      <div class="btn-row">
+        <a class="btn primary" href="#guides">Explore the guide</a>
+        <a class="btn ghost" href="#editions">Travel &amp; live</a>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#about">Scroll</a>
+  </section>
+
+  <!-- IMAGE STRIP -->
+  <section class="strip" aria-label="Photos of Singapore">
+    <img src="assets/img/strip-supertrees-1800.jpg" srcset="assets/img/strip-supertrees-800.jpg 800w, assets/img/strip-supertrees-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, 50vw" alt="Supertrees and the skyway against a blue sky" width="1800" height="1201" loading="lazy" decoding="async">
+    <img src="assets/img/strip-marina-bay-day-1800.jpg" srcset="assets/img/strip-marina-bay-day-800.jpg 800w, assets/img/strip-marina-bay-day-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, 50vw" alt="Marina Bay Sands and the garden domes across the water" width="1800" height="1350" loading="lazy" decoding="async">
+    <img src="assets/img/strip-artscience-1800.jpg" srcset="assets/img/strip-artscience-800.jpg 800w, assets/img/strip-artscience-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, 50vw" alt="The lotus-shaped ArtScience Museum in front of the skyline" width="1800" height="1200" loading="lazy" decoding="async">
+    <img src="assets/img/strip-jewel-1800.jpg" srcset="assets/img/strip-jewel-800.jpg 800w, assets/img/strip-jewel-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, 50vw" alt="The Rain Vortex waterfall under the glass dome of Jewel Changi" width="1717" height="2576" loading="lazy" decoding="async">
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section light" id="about">
+    <div class="container narrow center">
+      <p class="eyebrow">About the guide</p>
+      <h2>One island. Every corner.</h2>
+      <p class="lead">Singapore is small enough to cross in an hour and dense enough to fill a month. Discover Singapore is a complete travel guide to the city: when to go, how to get around, where to stay, what to eat, what it costs, local rules and etiquette, and how to handle the heat and the rain.</p>
+    </div>
+    <div class="container stats">
+      <div><strong>1965</strong><span>year Singapore became independent</span></div>
+      <div><strong>2015</strong><span>the Botanic Gardens became a UNESCO World Heritage Site</span></div>
+      <div><strong>2020</strong><span>hawker culture joined UNESCO’s intangible heritage list</span></div>
+    </div>
+  </section>
+
+  <!-- THE TWO BOOKS -->
+  <section class="photo-section tall" id="editions">
+    <img class="bg" src="assets/img/editions-mbs-night-1800.jpg" srcset="assets/img/editions-mbs-night-800.jpg 800w, assets/img/editions-mbs-night-1800.jpg 1800w" sizes="100vw" alt="Marina Bay Sands lit up at night across the bay" width="1800" height="1200" loading="lazy" decoding="async">
+    <div class="shade heavy"></div>
+    <div class="container narrow center on-photo">
+      <p class="eyebrow light">The series</p>
+      <h2>Visit first. Stay longer.</h2>
+      <p class="lead">The travel guide covers everything for a first or fifth trip. A second book, for expats and digital nomads, follows later for anyone planning to live and work here.</p>
+      <div class="btn-row center-row">
+        <a class="btn primary" href="#guide">The travel guide</a>
+        <a class="btn ghost" href="#nomads">Expat &amp; nomad edition</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE FEATURE -->
+  <section class="photo-section" id="guide">
+    <img class="bg" src="assets/img/guide-cbd-night-1800.jpg" srcset="assets/img/guide-cbd-night-800.jpg 800w, assets/img/guide-cbd-night-1800.jpg 1800w" sizes="100vw" alt="Skyscrapers lit blue at night above old shophouse roofs" width="1800" height="1196" loading="lazy" decoding="async">
+    <div class="shade heavy"></div>
+    <div class="container on-photo split">
+      <div>
+        <p class="eyebrow light">The travel guide</p>
+        <h2>Skyline, streets and hawker stalls.</h2>
+        <p class="lead">Mornings in the gardens, afternoons in the shophouse quarters, nights at the hawker centres. The travel guide is built around neighbourhoods, food and easy days out, with maps for each area.</p>
+        <a class="link-arrow" href="#map">See the neighbourhoods on the map →</a>
+      </div>
+      <ul class="spots">
+        <li><strong>Marina Bay</strong><span>The skyline, the waterfront and the light show.</span></li>
+        <li><strong>Gardens by the Bay</strong><span>Supertrees, cloud forest and cooled domes.</span></li>
+        <li><strong>Chinatown</strong><span>Temples, shophouses and Maxwell Food Centre.</span></li>
+        <li><strong>Little India &amp; Kampong Glam</strong><span>Spice shops, Sultan Mosque and Haji Lane.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GUIDE CARD -->
+  <section class="section stone">
+    <div class="container book-feature">
+      <a class="cover" href="#guides"><img src="assets/img/cover-guide-900.jpg" srcset="assets/img/cover-guide-500.jpg 500w, assets/img/cover-guide-900.jpg 900w" sizes="(min-width: 900px) 360px, 80vw" alt="Cover of Discover Singapore, the complete travel guide" width="900" height="1350" loading="lazy" decoding="async"></a>
+      <div>
+        <p class="eyebrow">The travel guide · Coming soon</p>
+        <h3>Discover Singapore<small>The Complete Travel Guide</small></h3>
+        <p class="subtitle">Neighbourhoods, food &amp; maps</p>
+        <ul class="features"><li>Neighbourhood by neighbourhood</li><li>Hawker centres &amp; what to order</li><li>MRT &amp; area maps</li><li>Weather &amp; festival calendar</li></ul>
+        <div class="btn-row">
+          <a class="btn primary" href="#checklist">Notify me at launch</a>
+          <a class="btn outline" href="#nomads">See the expat edition</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOMAD FEATURE -->
+  <section class="photo-section" id="nomads">
+    <img class="bg" src="assets/img/nomad-cbd-night-1800.jpg" srcset="assets/img/nomad-cbd-night-800.jpg 800w, assets/img/nomad-cbd-night-1800.jpg 1800w" sizes="100vw" alt="The financial district at night seen from above" width="1800" height="1200" loading="lazy" decoding="async">
+    <div class="shade heavy"></div>
+    <div class="container on-photo split">
+      <div>
+        <p class="eyebrow light">Coming later</p>
+        <h2>Stay longer. Work from the equator.</h2>
+        <p class="lead">For anyone moving here or basing themselves in Singapore for a few months. The expat and digital nomad edition covers passes, housing, neighbourhoods to live in, coworking and the real cost of a month in the city.</p>
+        <a class="link-arrow" href="#checklist">Get notified when it launches →</a>
+      </div>
+      <ul class="spots">
+        <li><strong>Visas &amp; passes</strong><span>The options for working and living here.</span></li>
+        <li><strong>Where to live</strong><span>Neighbourhoods compared by budget and commute.</span></li>
+        <li><strong>Coworking &amp; cafés</strong><span>Places to work, with good Wi-Fi and air-con.</span></li>
+        <li><strong>Cost of living</strong><span>Rent, food, transport and healthcare.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- NOMAD CARD -->
+  <section class="section stone">
+    <div class="container book-feature reverse">
+      <a class="cover" href="#guides"><img src="assets/img/cover-nomad-900.jpg" srcset="assets/img/cover-nomad-500.jpg 500w, assets/img/cover-nomad-900.jpg 900w" sizes="(min-width: 900px) 360px, 80vw" alt="Cover of Discover Singapore, Expat and Digital Nomad Edition" width="900" height="1350" loading="lazy" decoding="async"></a>
+      <div>
+        <p class="eyebrow">The expat &amp; nomad guide · Coming later</p>
+        <h3>Discover Singapore<small>Expat &amp; Digital Nomad Edition</small></h3>
+        <p class="subtitle">Living, working &amp; settling in</p>
+        <ul class="features"><li>Passes &amp; paperwork</li><li>Renting a home</li><li>Coworking &amp; internet</li><li>Healthcare, banking &amp; schools</li></ul>
+        <div class="btn-row">
+          <a class="btn primary" href="#checklist">Notify me at launch</a>
+          <a class="btn outline" href="#guide">See the travel guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARDEN CITY -->
+  <section class="photo-section tall" id="garden">
+    <img class="bg" src="assets/img/garden-barrage-1800.jpg" srcset="assets/img/garden-barrage-800.jpg 800w, assets/img/garden-barrage-1800.jpg 1800w" sizes="100vw" alt="Gardens by the Bay and Marina Barrage with ships anchored offshore" width="1800" height="900" loading="lazy" decoding="async">
+    <div class="shade heavy"></div>
+    <div class="container narrow on-photo">
+      <p class="eyebrow light">The garden city</p>
+      <h2>Grown from the sea. Planted like a garden.</h2>
+      <p class="lead">Singapore has grown by roughly a quarter since independence, much of it land reclaimed from the sea. Then it planted that land so thickly that it now calls itself a city in nature. After dark the Supertrees at Gardens by the Bay light up for the nightly Garden Rhapsody show.</p>
+      <a class="link-arrow" href="#history">Read the history →</a>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section light" id="history">
+    <div class="container split-light">
+      <div>
+        <p class="eyebrow">The history of Singapore</p>
+        <h2>A port with a long memory.</h2>
+        <p class="lead">Malay harbour, British trading post, independent nation. The guide opens with the story behind the skyline.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="#journal">Read the journal</a>
+        </div>
+      </div>
+      <ul class="features"><li>Temasek and the old Malay port</li><li>Raffles and the 1819 trading post</li><li>The Japanese occupation, 1942–45</li><li>Independence in 1965</li></ul>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section class="section stone" id="journal">
+    <div class="container">
+      <p class="eyebrow center">From the journal</p>
+      <h2 class="center">Tips, maps &amp; field notes</h2>
+      <div class="journal-grid">
+        <article class="journal-card">
+          <img src="assets/img/journal-skyline-dusk-1800.jpg" srcset="assets/img/journal-skyline-dusk-800.jpg 800w, assets/img/journal-skyline-dusk-1800.jpg 1800w" sizes="(min-width: 900px) 33vw, 100vw" alt="Clouds over the skyline at sunset" width="1800" height="1013" loading="lazy" decoding="async">
+          <div><span class="tags">Planning · Weather</span><h3>Best Time to Visit Singapore: A Month-by-Month Guide</h3><p>Monsoon showers, festival dates and the months with the clearest skies.</p><span class="soon-label">Coming soon</span></div>
+        </article>
+        <article class="journal-card">
+          <img src="assets/img/journal-shophouses-1800.jpg" srcset="assets/img/journal-shophouses-800.jpg 800w, assets/img/journal-shophouses-1800.jpg 1800w" sizes="(min-width: 900px) 33vw, 100vw" alt="City towers rising behind rows of shophouses at night" width="1800" height="1196" loading="lazy" decoding="async">
+          <div><span class="tags">Neighbourhoods</span><h3>Where to Stay in Singapore: Neighbourhoods Compared</h3><p>Marina Bay, Chinatown, Tiong Bahru and more, by budget and style of trip.</p><span class="soon-label">Coming soon</span></div>
+        </article>
+        <article class="journal-card">
+          <img src="assets/img/journal-cbd-1800.jpg" srcset="assets/img/journal-cbd-800.jpg 800w, assets/img/journal-cbd-1800.jpg 1800w" sizes="(min-width: 900px) 33vw, 100vw" alt="The city centre at night seen from above" width="1800" height="1200" loading="lazy" decoding="async">
+          <div><span class="tags">Getting around</span><h3>Getting Around Singapore: MRT, Buses &amp; Taxis</h3><p>How to pay, which lines you need, and when a Grab beats the train.</p><span class="soon-label">Coming soon</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="section light" id="highlights">
+    <div class="container">
+      <p class="eyebrow center">Start here</p>
+      <h2 class="center">Singapore highlights</h2>
+      <div class="card-grid">
+        <a class="card" href="#guides"><img src="assets/img/hl-supertree-grove-1800.jpg" srcset="assets/img/hl-supertree-grove-800.jpg 800w, assets/img/hl-supertree-grove-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="Supertrees lit up at night with Marina Bay Sands behind" width="1800" height="2250" loading="lazy" decoding="async"><span class="card-tag">Gardens by the Bay</span><span class="card-body"><strong>Supertree Grove</strong><em>Lights and music every evening.</em></span></a>
+        <a class="card" href="#guides"><img src="assets/img/hl-marina-bay-sands-1800.jpg" srcset="assets/img/hl-marina-bay-sands-800.jpg 800w, assets/img/hl-marina-bay-sands-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="Marina Bay Sands at night with the ArtScience Museum in front" width="1800" height="1200" loading="lazy" decoding="async"><span class="card-tag">Marina Bay</span><span class="card-body"><strong>Marina Bay Sands</strong><em>Three towers and a SkyPark on top.</em></span></a>
+        <a class="card" href="#guides"><img src="assets/img/hl-jewel-1800.jpg" srcset="assets/img/hl-jewel-800.jpg 800w, assets/img/hl-jewel-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="The Rain Vortex falling through the glass dome of Jewel Changi" width="1717" height="2576" loading="lazy" decoding="async"><span class="card-tag">Changi</span><span class="card-body"><strong>Jewel Changi</strong><em>The Rain Vortex, an indoor waterfall.</em></span></a>
+        <a class="card" href="#guides"><img src="assets/img/hl-artscience-1800.jpg" srcset="assets/img/hl-artscience-800.jpg 800w, assets/img/hl-artscience-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="The ArtScience Museum under a bright sky with palm trees" width="1800" height="2400" loading="lazy" decoding="async"><span class="card-tag">Marina Bay</span><span class="card-body"><strong>ArtScience Museum</strong><em>The lotus-shaped museum on the bay.</em></span></a>
+        <a class="card" href="#guides"><img src="assets/img/hl-skyway-1800.jpg" srcset="assets/img/hl-skyway-800.jpg 800w, assets/img/hl-skyway-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="The skyway curving between Supertrees above the gardens" width="1800" height="1200" loading="lazy" decoding="async"><span class="card-tag">Gardens by the Bay</span><span class="card-body"><strong>The Skyway</strong><em>A walkway between the Supertrees.</em></span></a>
+        <a class="card" href="#guides"><img src="assets/img/hl-marina-barrage-1800.jpg" srcset="assets/img/hl-marina-barrage-800.jpg 800w, assets/img/hl-marina-barrage-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="Aerial view of Marina Barrage and the garden domes with ships at sea" width="1800" height="900" loading="lazy" decoding="async"><span class="card-tag">Marina Bay</span><span class="card-body"><strong>Marina Barrage</strong><em>Dam, park and the anchored ships.</em></span></a>
+        <a class="card" href="#guides"><img src="assets/img/hl-fullerton-1800.jpg" srcset="assets/img/hl-fullerton-800.jpg 800w, assets/img/hl-fullerton-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="The Fullerton Hotel and financial district reflected at sunset" width="1800" height="1013" loading="lazy" decoding="async"><span class="card-tag">Downtown</span><span class="card-body"><strong>The waterfront</strong><em>The Fullerton and the CBD at dusk.</em></span></a>
+        <a class="card" href="#guides"><img src="assets/img/hl-supertrees-day-1800.jpg" srcset="assets/img/hl-supertrees-day-800.jpg 800w, assets/img/hl-supertrees-day-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="Supertrees covered in plants against a blue sky" width="1800" height="1201" loading="lazy" decoding="async"><span class="card-tag">Gardens by the Bay</span><span class="card-body"><strong>Supertrees by day</strong><em>Vertical gardens under steel canopies.</em></span></a>
+        <a class="card" href="#guides"><img src="assets/img/hl-flyer-1800.jpg" srcset="assets/img/hl-flyer-800.jpg 800w, assets/img/hl-flyer-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="Marina Bay Sands, the skyline and the Singapore Flyer reflected in the bay at night" width="1717" height="2576" loading="lazy" decoding="async"><span class="card-tag">Marina Bay</span><span class="card-body"><strong>Singapore Flyer</strong><em>The bay and skyline from the water’s edge.</em></span></a>
+        <a class="card" href="#guides"><img src="assets/img/hl-night-lights-1800.jpg" srcset="assets/img/hl-night-lights-800.jpg 800w, assets/img/hl-night-lights-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="Glowing pink egg-shaped lights on the water below Marina Bay Sands" width="1498" height="1998" loading="lazy" decoding="async"><span class="card-tag">Marina Bay</span><span class="card-body"><strong>Lights by the bay</strong><em>Glowing art below the towers.</em></span></a>
+        <a class="card" href="#guides"><img src="assets/img/hl-bayfront-night-1800.jpg" srcset="assets/img/hl-bayfront-night-800.jpg 800w, assets/img/hl-bayfront-night-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="Marina Bay Sands seen between two bridges, reflected in the water at night" width="1800" height="2250" loading="lazy" decoding="async"><span class="card-tag">Marina Bay</span><span class="card-body"><strong>Bayfront at night</strong><em>Bridges, palms and the SkyPark.</em></span></a>
+        <a class="card" href="#guides"><img src="assets/img/hl-supertree-close-1800.jpg" srcset="assets/img/hl-supertree-close-800.jpg 800w, assets/img/hl-supertree-close-1800.jpg 1800w" sizes="(min-width: 900px) 25vw, (min-width: 600px) 50vw, 100vw" alt="Looking up a plant-covered Supertree lit at night" width="1717" height="2576" loading="lazy" decoding="async"><span class="card-tag">Gardens by the Bay</span><span class="card-body"><strong>Under the Supertrees</strong><em>Living walls of ferns and orchids.</em></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIET SINGAPORE -->
+  <section class="photo-section tall">
+    <img class="bg" src="assets/img/quiet-dusk-1800.jpg" srcset="assets/img/quiet-dusk-800.jpg 800w, assets/img/quiet-dusk-1800.jpg 1800w" sizes="100vw" alt="The waterfront at dusk with the city towers under heavy cloud" width="1717" height="2576" style="object-position: 50% 62%" loading="lazy" decoding="async">
+    <div class="shade heavy"></div>
+    <div class="container narrow center on-photo">
+      <p class="eyebrow light">Beyond the postcards</p>
+      <h2>Discover the quiet Singapore.</h2>
+      <p class="lead">Past the skyline and the malls the island slows down: kampong houses on Pulau Ubin, rainforest trails around the reservoirs, and old shophouse streets where breakfast is kaya toast and kopi. The guide points you there too.</p>
+      <div class="btn-row center-row"><a class="btn primary" href="#guides">See the guide</a></div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="section stone" id="map">
+    <div class="container narrow center">
+      <p class="eyebrow">The city</p>
+      <h2>Six neighbourhoods, one island.</h2>
+      <svg class="map" viewBox="0 0 640 420" role="img" aria-label="Schematic map of six Singapore neighbourhoods">
+        <title>Schematic map of Singapore neighbourhoods</title>
+        <path class="range" d="M60 210 C70 150 150 110 240 100 C320 80 420 90 500 115 C560 130 600 170 590 215 C580 260 520 285 450 290 C400 300 360 300 330 305 C280 310 220 300 170 285 C110 270 55 255 60 210 Z"/>
+        <path class="range" d="M250 360 C270 345 330 345 350 358 C335 375 270 378 250 360 Z"/>
+        <g class="route"><path d="M260 235 L325 205 L360 190 L385 200 M325 205 L345 255 L300 265 M300 265 L300 355"/></g>
+        <g class="pin"><circle cx="260" cy="235" r="8"/><text x="150" y="226">Orchard Road</text></g>
+        <g class="pin"><circle cx="360" cy="190" r="8"/><text x="300" y="168">Little India</text></g>
+        <g class="pin"><circle cx="385" cy="200" r="8"/><text x="399" y="204">Kampong Glam</text></g>
+        <g class="pin"><circle cx="345" cy="255" r="8"/><text x="359" y="259">Marina Bay</text></g>
+        <g class="pin"><circle cx="300" cy="265" r="8"/><text x="196" y="282">Chinatown</text></g>
+        <g class="pin"><circle cx="300" cy="355" r="8"/><text x="366" y="365">Sentosa</text></g>
+      </svg>
+      <p class="fine">Schematic map, not to scale.</p>
+    </div>
+  </section>
+
+  <!-- THE GUIDES -->
+  <section class="section light" id="guides">
+    <div class="container">
+      <p class="eyebrow center">The guides</p>
+      <h2 class="center">Visit or stay.</h2>
+      <p class="lead center narrow">The travel guide is in preparation, and the expat &amp; digital nomad edition follows later. Leave your email below and we will tell you the day each one launches.</p>
+      <div class="book-grid">
+        <article class="book">
+          <a class="cover" href="#guide"><img src="assets/img/cover-guide-900.jpg" srcset="assets/img/cover-guide-500.jpg 500w, assets/img/cover-guide-900.jpg 900w" sizes="(min-width: 700px) 320px, 70vw" alt="Cover of Discover Singapore, the complete travel guide" width="900" height="1350" loading="lazy" decoding="async"></a>
+          <p class="series">The travel guide</p>
+          <h3>Discover Singapore</h3>
+          <p class="subtitle">Neighbourhoods, food &amp; maps</p>
+          <span class="soon-label">Coming soon</span>
+          <div class="btn-row center-row"><a class="btn primary" href="#checklist">Notify me</a><a class="btn outline" href="#guide">Travel guide</a></div>
+        </article>
+        <article class="book">
+          <a class="cover" href="#nomads"><img src="assets/img/cover-nomad-900.jpg" srcset="assets/img/cover-nomad-500.jpg 500w, assets/img/cover-nomad-900.jpg 900w" sizes="(min-width: 700px) 320px, 70vw" alt="Cover of Discover Singapore, Expat and Digital Nomad Edition" width="900" height="1350" loading="lazy" decoding="async"></a>
+          <p class="series">Expat &amp; nomad edition</p>
+          <h3>Discover Singapore</h3>
+          <p class="subtitle">Living, working &amp; settling in</p>
+          <span class="soon-label">Coming later</span>
+          <div class="btn-row center-row"><a class="btn primary" href="#checklist">Notify me</a><a class="btn outline" href="#nomads">Expat edition</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section class="photo-section tall" id="checklist">
+    <img class="bg" src="assets/img/checklist-bay-day-1800.jpg" srcset="assets/img/checklist-bay-day-800.jpg 800w, assets/img/checklist-bay-day-1800.jpg 1800w" sizes="100vw" alt="Marina Bay Sands and the garden domes beyond a bed of flowers" width="1800" height="1350" loading="lazy" decoding="async">
+    <div class="shade heavy"></div>
+    <div class="container narrow center on-photo">
+      <p class="eyebrow light">Free download</p>
+      <h2>The Singapore Travel Checklist</h2>
+      <p class="lead">A free two-page checklist for planning your trip, from landing at Changi to your last hawker meal.</p>
+      <form class="signup" id="signup" data-endpoint="" novalidate>
+        <label class="sr-only" for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        <button class="btn primary" type="submit">Send it</button>
+      </form>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+      <p class="fine light">One email per new guide. Unsubscribe any time.</p>
+      <ul class="check-items">
+        <li>Getting there: Changi &amp; transfers</li>
+        <li>SG Arrival Card before you fly</li>
+        <li>MRT, buses &amp; contactless cards</li>
+        <li>Heat, rain &amp; what to pack</li>
+        <li>Local rules &amp; etiquette</li>
+        <li>Emergency numbers (999 &amp; 995)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERIES BAND -->
+  <section class="band">
+    <div class="container band-inner">
+      <p><strong>Part of the Discover series.</strong> Independent travel guides, one destination at a time.</p>
+      <a class="link-arrow dark" href="https://discoverhawaii.co">Discover Hawaii →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="logo" href="#top">Discover<b>Singapore</b><i>.</i></a>
+    <nav aria-label="Footer">
+      <a href="#guides">All guides</a>
+      <a href="#guide">Travel guide</a>
+      <a href="#nomads">Expats &amp; nomads</a>
+      <a href="#garden">Garden City</a>
+      <a href="#history">History</a>
+      <a href="#journal">Journal</a>
+      <a href="#checklist">Free checklist</a>
+    </nav>
+    <p>© <span id="year">2026</span> Discover Singapore. Independent travel guides to Singapore.</p>
+  </div>
+</footer>
+
+
+<script>
+(function () {
+  "use strict";
+
+  var header = document.getElementById("header");
+  var nav = document.getElementById("nav");
+  var toggle = document.getElementById("navToggle");
+
+  // Solid header after scrolling past the top
+  function onScroll() {
+    header.classList.toggle("solid", window.scrollY > 40);
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Mobile menu
+  toggle.addEventListener("click", function () {
+    var open = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+  nav.addEventListener("click", function (e) {
+    if (e.target.closest("a") && nav.classList.contains("open")) {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Dropdowns (click/tap + Escape)
+  var dropdowns = document.querySelectorAll(".dropdown");
+  dropdowns.forEach(function (dd) {
+    var btn = dd.querySelector(".dropdown-btn");
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var willOpen = !dd.classList.contains("open");
+      dropdowns.forEach(function (o) {
+        o.classList.remove("open");
+        o.querySelector(".dropdown-btn").setAttribute("aria-expanded", "false");
+      });
+      dd.classList.toggle("open", willOpen);
+      btn.setAttribute("aria-expanded", String(willOpen));
+    });
+  });
+  document.addEventListener("click", function () {
+    dropdowns.forEach(function (o) {
+      o.classList.remove("open");
+      o.querySelector(".dropdown-btn").setAttribute("aria-expanded", "false");
+    });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      dropdowns.forEach(function (o) { o.classList.remove("open"); });
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Footer year
+  var year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Checklist sign-up.
+  // Set data-endpoint on #signup (in index.html) to your form service URL.
+  // Until then the form does NOT collect addresses and says so honestly.
+  var form = document.getElementById("signup");
+  var msg = document.getElementById("formMsg");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var email = form.elements.email.value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      msg.textContent = "Please enter a valid email address.";
+      return;
+    }
+    var endpoint = form.getAttribute("data-endpoint");
+    if (!endpoint) {
+      msg.textContent = "Sign-ups open soon. Please check back shortly.";
+      return;
+    }
+    msg.textContent = "Sending…";
+    fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ email: email, source: "discoversingapore.org" })
+    }).then(function (r) {
+      if (!r.ok) throw new Error("bad status");
+      form.reset();
+      msg.textContent = "Thank you. Check your inbox for the checklist.";
+    }).catch(function () {
+      msg.textContent = "Something went wrong. Please try again.";
+    });
+  });
+})();
+
+</script>
