@@ -54,6 +54,7 @@ COVERS = {
 }
 
 PAGE_FILES = ["index.html", "robots.txt", "sitemap.xml"]
+PAGE_DIRS = ["blog"]
 
 
 def save_sizes(im, name, widths):
@@ -86,8 +87,13 @@ def main():
         shutil.rmtree(DIST)
     IMG.mkdir(parents=True)
 
+    import make_articles
+    make_articles.main()
+
     for f in PAGE_FILES:
         shutil.copy(ROOT / f, DIST / f)
+    for d in PAGE_DIRS:
+        shutil.copytree(ROOT / d, DIST / d)
 
     for slot, photo in SLOTS.items():
         with Image.open(PHOTOS / photo) as im:
