@@ -82,6 +82,19 @@ def placeholder_cover(subtitle):
     return im
 
 
+def version_assets():
+    """Add ?v=<content hash> to /static/ links so browsers fetch new versions."""
+    import hashlib
+    tags = {}
+    for f in (DIST / "static").iterdir():
+        tags[f"/static/{f.name}"] = hashlib.md5(f.read_bytes()).hexdigest()[:8]
+    for page in DIST.rglob("*.html"):
+        s = page.read_text(encoding="utf8")
+        for url, h in tags.items():
+            s = s.replace(f'"{url}"', f'"{url}?v={h}"')
+        page.write_text(s, encoding="utf8")
+
+
 def main():
     if DIST.exists():
         shutil.rmtree(DIST)
@@ -96,6 +109,8 @@ def main():
         shutil.copy(ROOT / f, DIST / f)
     for d in PAGE_DIRS:
         shutil.copytree(ROOT / d, DIST / d)
+
+    version_assets()
 
     for slot, photo in SLOTS.items():
         with Image.open(PHOTOS / photo) as im:
