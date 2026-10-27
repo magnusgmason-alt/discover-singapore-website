@@ -46,9 +46,17 @@
   .smap { grid-template-columns: 1fr; height: auto; min-height: 0; }
   .smap-list { display: none; }
   .smap-stage { height: 72svh; min-height: 420px; }
-  .smap-card { left: 10px; right: 10px; bottom: 10px; width: auto; max-height: 62%; }
-  .smap-pic { aspect-ratio: 21 / 9; }
-  .addt.smap-addt { width: auto; height: 38px; padding: 0 16px; }
+  .smap-card { left: 10px; right: 10px; bottom: 10px; width: auto; max-height: none; overflow: visible; display: grid; grid-template-columns: 96px minmax(0, 1fr); }
+  .smap-pic { aspect-ratio: auto; min-height: 100%; border-radius: var(--radius) 0 0 var(--radius); }
+  .smap-pic .card-tag { display: none; }
+  .smap-pic .card-ph::before { display: none; }
+  .smap-close { top: 6px; right: 6px; width: 30px; height: 30px; background: rgba(14, 19, 23, 0.08); color: var(--ink); }
+  .smap-body { padding: 12px 40px 12px 14px; }
+  .smap-body h3 { font-size: 1.02rem; margin: 4px 0 4px; }
+  .smap-body > p:not(.smap-kind) { font-size: 0.84rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .smap-actions { gap: 6px 14px; margin-top: 10px; margin-right: -26px; }
+  .addt.smap-addt { width: auto; height: 34px; padding: 0 14px; }
   .addt.smap-addt span { display: inline; }
+  .smap-link { font-size: 0.8rem; }
 }
 .smap .leaflet-tile-pane { filter: saturate(0.55) contrast(0.96) brightness(1.03); }
