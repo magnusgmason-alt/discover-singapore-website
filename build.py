@@ -53,8 +53,8 @@ COVERS = {
     "cover-nomad": "EXPAT & DIGITAL NOMAD EDITION",
 }
 
-PAGE_FILES = ["index.html", "robots.txt", "sitemap.xml"]
-PAGE_DIRS = ["blog"]
+PAGE_FILES = ["index.html", "trip.html", "robots.txt", "sitemap.xml"]
+PAGE_DIRS = ["blog", "static"]
 
 
 def save_sizes(im, name, widths):
@@ -87,6 +87,8 @@ def main():
         shutil.rmtree(DIST)
     IMG.mkdir(parents=True)
 
+    import make_trip
+    make_trip.main()  # updates index.html highlights, writes trip.html and static/
     import make_articles
     make_articles.main()
 

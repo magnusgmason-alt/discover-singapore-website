@@ -195,6 +195,7 @@ def page(a, others):
 {FONTS}
 <script type="application/ld+json">{json.dumps(ld)}</script>
 <script type="application/ld+json">{json.dumps(crumbs)}</script>
+<link rel="stylesheet" href="/static/trip.css">
 <style>{STYLE}{ARTICLE_CSS}</style>
 </head>
 <body>
@@ -226,6 +227,7 @@ def page(a, others):
 </main>
 {FOOTER}
 {SCRIPT}
+<script src="/static/trip.js" defer></script>
 </body>
 </html>
 """
@@ -270,6 +272,7 @@ def blog_index():
 <meta property="og:description" content="{desc}">
 <meta property="og:image" content="{SITE}/assets/img/hero-skyline-night-1800.jpg">
 {FONTS}
+<link rel="stylesheet" href="/static/trip.css">
 <style>{STYLE}{ARTICLE_CSS}</style>
 </head>
 <body>
@@ -293,6 +296,7 @@ def blog_index():
 </main>
 {FOOTER}
 {SCRIPT}
+<script src="/static/trip.js" defer></script>
 </body>
 </html>
 """
