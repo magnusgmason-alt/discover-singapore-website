@@ -80,7 +80,7 @@ h3 { font-size: 1.6rem; font-weight: 800; }
 .logo { text-decoration: none; font-weight: 500; font-size: 1.15rem; letter-spacing: -0.03em; white-space: nowrap; }
 .logo b { font-weight: 800; }
 .logo i { font-style: normal; color: var(--red); font-weight: 800; }
-.nav { display: flex; align-items: center; gap: 22px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; }
+.nav { display: flex; align-items: center; gap: 16px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; }
 .nav > a { text-decoration: none; opacity: 0.92; }
 .nav > a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 6px; }
 .dropdown { position: relative; }
@@ -242,7 +242,13 @@ h3 { font-size: 1.6rem; font-weight: 800; }
 }
 
 /* Mobile nav */
-@media (max-width: 960px) {
+@media (min-width: 1101px) {
+  .nav > a, .nav .dropdown-btn { white-space: nowrap; }
+}
+@media (min-width: 1101px) and (max-width: 1280px) {
+  .nav { gap: 12px; font-size: 0.74rem; }
+}
+@media (max-width: 1100px) {
   .nav-toggle { display: block; }
   .nav { position: fixed; inset: var(--header-h) 0 auto 0; background: var(--ink); flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 24px; max-height: calc(100svh - var(--header-h)); overflow-y: auto; display: none; font-size: 1rem; }
   .nav.open { display: flex; }
