@@ -60,6 +60,7 @@
       fab.classList.toggle("show", n > 0);
     }
     if (onTripPage) renderTrip();
+    try { document.dispatchEvent(new CustomEvent("ds-trip-change")); } catch (e) {}
   }
 
   function toggle(id) {
@@ -361,5 +362,6 @@
       .then(function () { btn.disabled = trip.length === 0; });
   }
 
+  window.DSTrip = { has: has, refresh: refresh };
   refresh();
 })();
