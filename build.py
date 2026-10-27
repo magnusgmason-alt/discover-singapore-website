@@ -38,7 +38,7 @@ SLOTS = {
     "hl-skyway": "16ab58e2-image.jpg",
     "hl-marina-barrage": "7d01a487-image.jpg",
     "hl-fullerton": "d2733fba-image.jpg",
-    "hl-supertrees-day": "35612b21-image.jpg",
+    "hl-merlion": "merlion-night.jpg",
     "hl-flyer": "fea3e8d1-image.jpg",
     "hl-night-lights": "9916a914-image.jpg",
     "hl-bayfront-night": "fd34662d-image.jpg",
