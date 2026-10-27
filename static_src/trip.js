@@ -262,7 +262,7 @@
         if (from && to) { doc.text(from + " to " + to + (days ? "  (" + days + (days === 1 ? " day)" : " days)") : ""), M, y); y += 7; }
         doc.text(stops.length + (stops.length === 1 ? " stop" : " stops"), M, y); y += 14;
         doc.setFontSize(10); doc.setTextColor(170, 180, 186);
-        doc.text(doc.splitTextToSize("Every stop has a Google Maps link: tap "Open in Google Maps" under any stop, or use the route on the last page.", W - 2 * M), M, y);
+        doc.text(doc.splitTextToSize("Every stop has a Google Maps link: tap 'Open in Google Maps' under any stop, or use the route on the last page.", W - 2 * M), M, y);
         doc.setFont("helvetica", "bold"); doc.setTextColor(255, 255, 255); doc.setFontSize(10);
         doc.text("discoversingapore.org", M, H - 16);
 
@@ -349,8 +349,11 @@
           doc.text("discoversingapore.org", M, H - 8);
           doc.text(k + " / " + pages, W - M, H - 8, { align: "right" });
         }
-        doc.save("my-singapore-trip.pdf");
-        status.innerHTML = "Your PDF is downloading. Have a wonderful trip!";
+        var blob = doc.output("blob"), url = URL.createObjectURL(blob), file = "my-singapore-trip.pdf";
+        var a = document.createElement("a");
+        a.href = url; a.download = file; a.rel = "noopener";
+        document.body.appendChild(a); a.click(); a.remove();
+        status.innerHTML = 'Your PDF is ready. Have a wonderful trip! If it did not download, <a href="' + url + '" download="' + file + '" target="_blank" rel="noopener">tap here to open your PDF</a>.';
       })
       .catch(function () {
         status.textContent = "Sorry, the PDF could not be made. Check your connection and try again.";
