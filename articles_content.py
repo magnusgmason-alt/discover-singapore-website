@@ -273,3 +273,6 @@ for _slug, _before, _fig in EXTRA_FIGS:
             assert _before in _a["body"], (_slug, _before)
             _a["body"] = _a["body"].replace(_before, _fig + "\n" + _before, 1)
 ARTICLES.extend(MORE)
+
+from articles_batch3 import BATCH3  # noqa: E402
+ARTICLES.extend(BATCH3)
