@@ -262,7 +262,7 @@
         if (from && to) { doc.text(from + " to " + to + (days ? "  (" + days + (days === 1 ? " day)" : " days)") : ""), M, y); y += 7; }
         doc.text(stops.length + (stops.length === 1 ? " stop" : " stops"), M, y); y += 14;
         doc.setFontSize(10); doc.setTextColor(170, 180, 186);
-        doc.text(doc.splitTextToSize("Every stop has a Google Maps link. Tap a place name in this PDF to open it in Maps.", W - 2 * M), M, y);
+        doc.text(doc.splitTextToSize("Every stop has a Google Maps link: tap "Open in Google Maps" under any stop, or use the route on the last page.", W - 2 * M), M, y);
         doc.setFont("helvetica", "bold"); doc.setTextColor(255, 255, 255); doc.setFontSize(10);
         doc.text("discoversingapore.org", M, H - 16);
 
