@@ -262,3 +262,14 @@ ARTICLES = [
         ],
     },
 ]
+
+
+# Second batch of articles and in-body photos for the first three.
+from articles_more import MORE, EXTRA_FIGS  # noqa: E402
+
+for _slug, _before, _fig in EXTRA_FIGS:
+    for _a in ARTICLES:
+        if _a["slug"] == _slug:
+            assert _before in _a["body"], (_slug, _before)
+            _a["body"] = _a["body"].replace(_before, _fig + "\n" + _before, 1)
+ARTICLES.extend(MORE)

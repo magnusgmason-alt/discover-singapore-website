@@ -238,9 +238,64 @@ def main():
     out = ROOT / "blog"
     out.mkdir(exist_ok=True)
     for a in ARTICLES:
-        others = [o for o in ARTICLES if o is not a]
+        i = ARTICLES.index(a)
+        others = [ARTICLES[(i + k) % len(ARTICLES)] for k in (1, 2, 3)]
         (out / f"{a['slug']}.html").write_text(page(a, others), encoding="utf8")
         print("article", a["slug"])
+    (out / "index.html").write_text(blog_index(), encoding="utf8")
+    print("blog index")
+
+
+def blog_index():
+    cards = "".join(
+        f"""<article class="journal-card">
+          <a class="cover-link" href="/blog/{o['slug']}"><img src="/assets/img/{o['image']}-800.jpg" alt="{html.escape(o['image_alt'])}" width="800" height="533" loading="lazy" decoding="async"></a>
+          <div><span class="tags">{o['category']}</span><h3><a href="/blog/{o['slug']}">{o['short']}</a></h3><p>{o['teaser']}</p><a class="link-arrow" href="/blog/{o['slug']}">Read the guide →</a></div>
+        </article>"""
+        for o in ARTICLES
+    )
+    title = "Singapore Travel Journal: Guides, Tips and Field Notes"
+    desc = "Practical Singapore travel guides: when to go, where to stay, getting around, Gardens by the Bay, Marina Bay, Jewel Changi, free things to do and Singapore at night."
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{title} · Discover Singapore</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{SITE}/blog">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Discover Singapore">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="{SITE}/assets/img/hero-skyline-night-1800.jpg">
+{FONTS}
+<style>{STYLE}{ARTICLE_CSS}</style>
+</head>
+<body>
+{HEADER}
+<main id="top">
+  <section class="a-hero">
+    <img class="bg" src="/assets/img/hero-skyline-night-1800.jpg" srcset="/assets/img/hero-skyline-night-800.jpg 800w, /assets/img/hero-skyline-night-1800.jpg 1800w" sizes="100vw" alt="The Singapore skyline lit up at night across Marina Bay" fetchpriority="high">
+    <div class="shade"></div>
+    <div class="a-hero-inner">
+      <p class="a-crumbs"><a href="/">Discover Singapore</a> / Journal</p>
+      <h1>The Singapore journal</h1>
+      <span class="rule"></span>
+      <p class="a-by">Tips, maps and field notes for your trip · Facts checked {CHECKED}</p>
+    </div>
+  </section>
+  <section class="keep">
+    <div class="container">
+      <div class="journal-grid">{cards}</div>
+    </div>
+  </section>
+</main>
+{FOOTER}
+{SCRIPT}
+</body>
+</html>
+"""
 
 
 if __name__ == "__main__":
