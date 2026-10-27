@@ -64,9 +64,12 @@
     renderCard(id);
     renderList();
     paint();
-    if (map && fly) {
-      var z = Math.max(map.getZoom(), 15);
-      map.flyTo(P[id].ll, z, { duration: 0.6 });
+    if (map) {
+      // Keep the pin clear of the preview card: right of it on desktop, above it on phones.
+      var z = fly ? Math.max(map.getZoom(), 15) : map.getZoom();
+      var pt = map.project(P[id].ll, z), phone = window.matchMedia("(max-width: 860px)").matches;
+      var shift = phone ? window.L.point(0, card.offsetHeight / 2) : window.L.point(-(card.offsetWidth + 16) / 2, 0);
+      map.flyTo(map.unproject(pt.subtract(shift), z), z, { duration: 0.6 });
     }
     if (fly && window.matchMedia("(max-width: 860px)").matches) {
       root.scrollIntoView({ behavior: "smooth", block: "start" });
