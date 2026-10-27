@@ -271,6 +271,7 @@ h3 { font-size: 1.6rem; font-weight: 800; }
 
 </style>
 <link rel="stylesheet" href="/static/trip.css">
+<link rel="stylesheet" href="/static/map.css">
 </head>
 <body>
 
@@ -565,27 +566,6 @@ h3 { font-size: 1.6rem; font-weight: 800; }
     </div>
   </section>
 
-  <!-- MAP -->
-  <section class="section stone" id="map">
-    <div class="container narrow center">
-      <p class="eyebrow">The city</p>
-      <h2>Six neighbourhoods, one island.</h2>
-      <svg class="map" viewBox="0 0 640 420" role="img" aria-label="Schematic map of six Singapore neighbourhoods">
-        <title>Schematic map of Singapore neighbourhoods</title>
-        <path class="range" d="M60 210 C70 150 150 110 240 100 C320 80 420 90 500 115 C560 130 600 170 590 215 C580 260 520 285 450 290 C400 300 360 300 330 305 C280 310 220 300 170 285 C110 270 55 255 60 210 Z"/>
-        <path class="range" d="M250 360 C270 345 330 345 350 358 C335 375 270 378 250 360 Z"/>
-        <g class="route"><path d="M260 235 L325 205 L360 190 L385 200 M325 205 L345 255 L300 265 M300 265 L300 355"/></g>
-        <g class="pin"><circle cx="260" cy="235" r="8"/><text x="150" y="226">Orchard Road</text></g>
-        <g class="pin"><circle cx="360" cy="190" r="8"/><text x="300" y="168">Little India</text></g>
-        <g class="pin"><circle cx="385" cy="200" r="8"/><text x="399" y="204">Kampong Glam</text></g>
-        <g class="pin"><circle cx="345" cy="255" r="8"/><text x="359" y="259">Marina Bay</text></g>
-        <g class="pin"><circle cx="300" cy="265" r="8"/><text x="196" y="282">Chinatown</text></g>
-        <g class="pin"><circle cx="300" cy="355" r="8"/><text x="366" y="365">Sentosa</text></g>
-      </svg>
-      <p class="fine">Schematic map, not to scale.</p>
-    </div>
-  </section>
-
   <!-- THE GUIDES -->
   <section class="section guides" id="guides">
     <img class="guides-bg" src="assets/img/guides-mbs-teal-1800.jpg" srcset="assets/img/guides-mbs-teal-800.jpg 800w, assets/img/guides-mbs-teal-1800.jpg 1800w" sizes="100vw" alt="" width="1512" height="2016" loading="lazy" decoding="async">
@@ -642,6 +622,25 @@ h3 { font-size: 1.6rem; font-weight: 800; }
   </section>
 
   <!-- SERIES BAND -->
+  <!-- INTERACTIVE MAP -->
+  <section class="section light smap-section" id="map">
+    <div class="container">
+      <p class="eyebrow center">Explore the island</p>
+      <h2 class="center">Singapore on the map</h2>
+      <p class="lead center">Tap a pin for a preview of each place, from Marina Bay to the mangroves of the north-west, then add your favourites to your trip.</p>
+      <!--MAP:START-->
+      <div class="hl-chips" id="smapChips" role="group" aria-label="Filter the map"><button class="hl-chip" type="button" data-cat="all" aria-pressed="true">All</button><button class="hl-chip" type="button" data-cat="icons" aria-pressed="false">Icons</button><button class="hl-chip" type="button" data-cat="nature" aria-pressed="false">Gardens & nature</button><button class="hl-chip" type="button" data-cat="culture" aria-pressed="false">Culture</button><button class="hl-chip" type="button" data-cat="food" aria-pressed="false">Food</button><button class="hl-chip" type="button" data-cat="nightlife" aria-pressed="false">Nightlife</button><button class="hl-chip" type="button" data-cat="shopping" aria-pressed="false">Shopping</button><button class="hl-chip" type="button" data-cat="family" aria-pressed="false">Family</button></div>
+      <div class="smap" id="smap">
+        <div class="smap-list" id="smapList" aria-label="Places on the map"></div>
+        <div class="smap-stage">
+          <div class="smap-canvas" id="smapCanvas" role="region" aria-label="Map of Singapore"><p class="smap-loading">Loading the map…</p></div>
+          <div class="smap-card" id="smapCard" hidden></div>
+        </div>
+      </div>
+      <!--MAP:END-->
+    </div>
+  </section>
+
   <section class="band">
     <div class="container band-inner">
       <p><strong>Part of the Discover series.</strong> Independent travel guides, one destination at a time.</p>
@@ -762,5 +761,6 @@ h3 { font-size: 1.6rem; font-weight: 800; }
 
 </script>
 <script src="/static/trip.js" defer></script>
+<script src="/static/map.js" defer></script>
 </body>
 </html>
