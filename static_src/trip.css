@@ -81,8 +81,10 @@
 .trip-page .site-header { background: rgba(14, 19, 23, 0.94); }
 
 @media (max-width: 1100px) { .trippromo { display: none; } }
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .nav-trip { justify-content: space-between; border: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); border-radius: 0; padding: 14px 0; }
+}
+@media (max-width: 960px) {
   .trip-wrap { grid-template-columns: 1fr; }
   .trip-panel { position: static; }
 }

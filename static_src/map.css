@@ -51,3 +51,4 @@
   .addt.smap-addt { width: auto; height: 38px; padding: 0 16px; }
   .addt.smap-addt span { display: inline; }
 }
+.smap .leaflet-tile-pane { filter: saturate(0.55) contrast(0.96) brightness(1.03); }
