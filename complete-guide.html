@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Discover Singapore Complete Guide</title>
+<meta name="description" content="Discover Singapore, the Complete Guide (2027 Edition): 236 pages, 31 chapters and 8 full-spread maps, fact-checked against official sources. Instant download.">
+<link rel="canonical" href="https://discoversingapore.org/complete-guide.html">
+<meta property="og:title" content="Discover Singapore · The Complete Guide 2027">
+<meta property="og:description" content="236 pages, 31 chapters, 8 full-spread maps. Fact-checked against official sources. Instant download.">
+<meta property="og:image" content="https://discoversingapore.org/assets/img/cover-guide-900.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,500&amp;display=swap" rel="stylesheet">
+<style>
+/* Layout: one dark "basalt night" page. Hero = faded Vestrahorn dunes (the cover's world) with the
+   book floating beside the pitch; then a page-turning preview window; then contents and facts. */
+:root {
+  color-scheme: dark;
+  --night: #0a1116;
+  --night-2: #0f1a21;
+  --frost: #e8eef1;
+  --mist: rgba(232, 238, 241, 0.72);
+  --line: rgba(232, 238, 241, 0.14);
+  --red: #d9483b;
+  --glacier: #c9d1d8;
+  --white: #fff;
+  --black: #000;
+  --sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --header-h: 72px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--sans); color: var(--frost); background: var(--night); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; line-height: 1.06; letter-spacing: -0.02em; text-wrap: balance; }
+p { margin: 0 0 1em; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--glacier); margin-bottom: 18px; }
+.lead { font-size: clamp(1.02rem, 1.4vw, 1.16rem); color: var(--mist); max-width: 60ch; }
+h2 { font-family: var(--serif); font-weight: 700; font-size: clamp(2rem, 4.4vw, 3.3rem); margin-bottom: 20px; }
+:focus-visible { outline: 3px solid var(--glacier); outline-offset: 3px; }
+
+/* Header */
+.site-header { position: fixed; inset: 0 0 auto 0; z-index: 50; height: calc(var(--header-h) + env(safe-area-inset-top, 0px)); padding-top: env(safe-area-inset-top, 0px); display: flex; align-items: center; color: var(--white); background: rgba(10, 17, 22, 0.55); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--line); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.logo { text-decoration: none; font-weight: 500; font-size: 1.15rem; letter-spacing: -0.03em; white-space: nowrap; }
+.logo b { font-weight: 800; } .logo i { font-style: normal; color: var(--red); font-weight: 800; }
+.top-nav { display: flex; align-items: center; gap: 22px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+.top-nav a { text-decoration: none; opacity: 0.9; }
+.top-nav a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 6px; }
+
+/* Buttons */
+.buy { display: grid; gap: 12px; max-width: 420px; margin-top: 30px; }
+.applepay { display: flex; align-items: center; justify-content: center; gap: 4px; height: 54px; border-radius: 10px; background: var(--black); color: var(--white); text-decoration: none; font: 600 1.32rem -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; letter-spacing: -0.01em; border: 1px solid rgba(255, 255, 255, 0.28); transition: transform 0.15s, border-color 0.2s; }
+.applepay:hover { transform: translateY(-1px); border-color: rgba(255, 255, 255, 0.6); }
+.applepay svg { width: 19px; height: 23px; margin-top: -3px; fill: currentColor; }
+.applepay small { font-size: 0.86rem; font-weight: 500; opacity: 0.75; margin-left: 10px; }
+.btn { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 12px 22px; border-radius: 2px; font: 700 0.78rem var(--sans); letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+.btn.primary { background: var(--frost); color: var(--night); }
+.btn.primary:hover { background: var(--white); }
+.btn.outline { border-color: rgba(232, 238, 241, 0.5); color: var(--frost); background: transparent; }
+.btn.outline:hover { background: var(--frost); color: var(--night); }
+.price { font: 800 1.9rem var(--sans); letter-spacing: -0.03em; color: var(--white); }
+.price s { font-size: 0.5em; opacity: 0.5; font-weight: 600; margin-left: 8px; }
+.assure { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.8rem; color: var(--mist); }
+.assure li { display: flex; align-items: center; gap: 7px; }
+.assure li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--glacier); }
+
+/* Hero: the dune photo fades into the night */
+.hero { position: relative; overflow: hidden; padding-block: calc(var(--header-h) + 70px) 90px; }
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; opacity: 0.55; -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%); }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 17, 22, 0.92) 0%, rgba(10, 17, 22, 0.6) 48%, rgba(10, 17, 22, 0.25) 100%), linear-gradient(180deg, rgba(10, 17, 22, 0.4) 0%, transparent 30%, var(--night) 100%); }
+.hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(32px, 6vw, 90px); align-items: center; }
+.hero h1 { font-size: clamp(3rem, 8.5vw, 6.6rem); font-weight: 500; letter-spacing: -0.055em; line-height: 0.92; }
+.hero h1 b { font-weight: 800; display: block; }
+.hero h1 i { font-style: normal; color: var(--red); }
+.rule { display: block; width: 72px; height: 3px; background: var(--red); margin: 26px 0 20px; }
+.edition { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--white); margin-bottom: 10px; }
+.hero-sub { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(1.3rem, 2.6vw, 1.9rem); color: var(--white); margin-bottom: 16px; }
+.hero-cover { position: relative; justify-self: center; width: min(360px, 100%); }
+.hero-cover img { width: 100%; border-radius: 3px; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.06); transform: rotate(1.5deg); }
+.hero-cover .badge { position: absolute; left: -18px; bottom: 34px; background: var(--red); color: var(--white); font: 800 0.7rem var(--sans); letter-spacing: 0.18em; text-transform: uppercase; padding: 10px 14px; border-radius: 2px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+
+/* Facts band */
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.facts > div { padding: 26px 22px 24px 0; }
+.facts > div + div { padding-left: 22px; border-left: 1px solid var(--line); }
+.facts strong { display: block; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1; font-variant-numeric: tabular-nums; }
+.facts span { display: block; margin-top: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); }
+
+/* Preview window */
+.section { padding-block: clamp(72px, 10vw, 120px); }
+.preview-wrap { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
+.viewer { background: var(--night-2); border: 1px solid var(--line); border-radius: 6px; padding: 14px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5); }
+.viewer-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 4px 4px 12px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); }
+.viewer-bar output { color: var(--white); font-variant-numeric: tabular-nums; }
+.viewer-bar .tag { color: var(--glacier); }
+.stage { position: relative; aspect-ratio: 2 / 3; max-width: 100%; background: #fff; border-radius: 2px; overflow: hidden; cursor: pointer; user-select: none; }
+.stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 0.25s; }
+.stage .end { position: absolute; inset: 0; display: grid; place-content: center; gap: 14px; padding: 28px; text-align: center; background: linear-gradient(180deg, rgba(10, 17, 22, 0.88), rgba(10, 17, 22, 0.97)); color: var(--frost); }
+.stage .end h3 { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; }
+.stage .end p { color: var(--mist); margin: 0; font-size: 0.95rem; }
+.stage .end .applepay { width: 100%; max-width: 320px; margin: 6px auto 0; }
+.viewer-ctrl { display: flex; align-items: center; gap: 10px; padding-top: 12px; }
+.viewer-ctrl button { flex: 0 0 auto; width: 46px; height: 42px; border-radius: 3px; border: 1px solid var(--line); background: transparent; color: var(--frost); font: 700 1.1rem var(--sans); cursor: pointer; }
+.viewer-ctrl button:hover:not(:disabled) { background: rgba(255, 255, 255, 0.08); }
+.viewer-ctrl button:disabled { opacity: 0.3; cursor: default; }
+.viewer-ctrl input[type=range] { flex: 1; min-width: 0; accent-color: var(--red); }
+.preview-note { font-size: 0.8rem; color: var(--mist); margin-top: 10px; text-align: center; }
+
+/* Contents */
+.parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 34px 40px; margin-top: 44px; }
+.part h3 { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--glacier); padding-bottom: 12px; border-bottom: 2px solid var(--frost); margin-bottom: 4px; }
+.part ol { list-style: none; margin: 0; padding: 0; }
+.part li { display: flex; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+.part li b { width: 22px; flex: none; color: var(--red); font-variant-numeric: tabular-nums; }
+
+/* Split feature */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
+.ticks { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 12px; }
+.ticks li { position: relative; padding-left: 24px; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 12px; height: 2px; background: var(--red); }
+.maps-img { border-radius: 4px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55); }
+
+/* FAQ */
+.faq { max-width: 820px; margin: 34px auto 0; }
+.faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+.faq summary { cursor: pointer; font-weight: 700; font-size: 1.02rem; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::after { content: "+"; color: var(--red); font-weight: 800; }
+.faq details[open] summary::after { content: "–"; }
+.faq p { margin: 12px 0 0; color: var(--mist); }
+
+/* Final CTA */
+.final { position: relative; overflow: hidden; text-align: center; }
+.final .bgimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.32; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 25%, #000 75%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 25%, #000 75%, transparent 100%); }
+.final .container { position: relative; }
+.final .buy { margin-left: auto; margin-right: auto; }
+.final .assure { justify-content: center; }
+
+.site-footer { background: #070c10; color: rgba(255, 255, 255, 0.7); padding-block: 48px 40px; font-size: 0.86rem; }
+.site-footer .container { display: grid; gap: 16px; }
+.site-footer p { margin: 0; opacity: 0.7; }
+.center { text-align: center; }
+.center .lead { margin-left: auto; margin-right: auto; }
+
+@media (max-width: 900px) {
+  .hero-grid, .preview-wrap, .split { grid-template-columns: 1fr; }
+  .hero-cover { order: -1; width: min(260px, 70%); }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .facts > div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .facts > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .top-nav .hide-sm { display: none; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 3rem; }
+  .applepay small { display: none; }
+  .hero-cover .badge { left: -8px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .applepay, .btn, .stage img { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">Discover<b>Singapore</b><i>.</i></a>
+    <nav class="top-nav" aria-label="Main">
+      <a class="hide-sm" href="#preview">Preview</a>
+      <a class="hide-sm" href="#inside">Inside</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <img class="hero-bg" src="assets/img/hero-skyline-night-1800.jpg" srcset="assets/img/hero-skyline-night-800.jpg 800w, assets/img/hero-skyline-night-1800.jpg 1800w" sizes="100vw" alt="" width="1800" height="1200" fetchpriority="high">
+    <div class="hero-shade"></div>
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">The complete guide · Available now</p>
+        <h1>Discover <b>Singapore<i>.</i></b></h1>
+        <span class="rule"></span>
+        <p class="edition">Complete Guide · 2027 Edition</p>
+        <p class="hero-sub">The Garden City on the Equator.</p>
+        <p class="lead">Everything you need for Singapore in one guide: Marina Bay and Gardens by the Bay, hawker food, Chinatown, Little India and Kampong Glam, Sentosa and the green north, plus the practical side most guides skip. The arrival card, getting around, real costs, local laws and the heat, all checked against official sources in October 2026.</p>
+        <div class="buy">
+          <div class="price">€12.99</div>
+          <a class="applepay" href="https://discover.lemonsqueezy.com/checkout/buy/9058f1b1-a17e-441c-a1f4-b1c349d2bf18" target="_blank" rel="noopener" aria-label="Buy with Apple Pay, €12.99"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.8 2 5.8 1.1 7.4c-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 1.9 2.7 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.6 1-1.5 1.4-2.9 1.4-3-.1 0-2.7-1-2.7-4.3zM11.6 3c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>Pay<small>Buy now</small></a>
+          <a class="btn outline" href="https://discover.lemonsqueezy.com/checkout/buy/9058f1b1-a17e-441c-a1f4-b1c349d2bf18" target="_blank" rel="noopener">Other ways to pay</a>
+          <ul class="assure"><li>Instant download</li><li>Read on any phone, tablet, e-reader or computer</li><li>Secure checkout</li></ul>
+        </div>
+      </div>
+      <div class="hero-cover">
+        <img src="assets/img/cover-guide-900.jpg" srcset="assets/img/cover-guide-500.jpg 500w, assets/img/cover-guide-900.jpg 900w" sizes="(min-width: 900px) 360px, 70vw" alt="Cover of Discover Singapore, Complete Guide: Marina Bay Sands at night" width="900" height="1348">
+        <span class="badge">236 pages</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="facts">
+      <div><strong>236</strong><span>pages, magazine layout</span></div>
+      <div><strong>31</strong><span>chapters in five parts</span></div>
+      <div><strong>8</strong><span>full-spread maps</span></div>
+      <div><strong>580+</strong><span>sources checked</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="preview">
+    <div class="container preview-wrap">
+      <div>
+        <p class="eyebrow">Look inside</p>
+        <h2>Read the first 20 pages.</h2>
+        <p class="lead">Flip through the opening of the book: the contents, how the guide works, Singapore at a glance, the island map, the month-by-month planner and the start of the 25 unmissable experiences. Click the page or use the arrows.</p>
+        <div class="buy">
+          <a class="applepay" href="https://discover.lemonsqueezy.com/checkout/buy/9058f1b1-a17e-441c-a1f4-b1c349d2bf18" target="_blank" rel="noopener" aria-label="Buy with Apple Pay, €12.99"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.8 2 5.8 1.1 7.4c-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 1.9 2.7 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.6 1-1.5 1.4-2.9 1.4-3-.1 0-2.7-1-2.7-4.3zM11.6 3c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>Pay<small>€12.99</small></a>
+          <ul class="assure"><li>Instant download</li><li>Read it anywhere</li></ul>
+        </div>
+      </div>
+      <div class="viewer" aria-label="Book preview">
+        <div class="viewer-bar"><span class="tag">Preview</span><output id="pvCount" aria-live="polite">Page 1 of 236</output></div>
+        <div class="stage" id="pvStage" title="Click to turn the page">
+          <img id="pvImg" src="assets/img/preview/p01.jpg" alt="Page 1 of Discover Singapore, Complete Guide" width="900" height="1359">
+          <div class="end" id="pvEnd" hidden>
+            <h3>That's the preview.</h3>
+            <p>216 more pages: 31 chapters, 8 maps and every practical detail for your trip.</p>
+            <a class="applepay" href="https://discover.lemonsqueezy.com/checkout/buy/9058f1b1-a17e-441c-a1f4-b1c349d2bf18" target="_blank" rel="noopener" aria-label="Buy with Apple Pay, €12.99"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.8 2 5.8 1.1 7.4c-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 1.9 2.7 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.6 1-1.5 1.4-2.9 1.4-3-.1 0-2.7-1-2.7-4.3zM11.6 3c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>Pay<small>€12.99</small></a>
+            <p>Instant download · read it anywhere</p>
+          </div>
+        </div>
+        <div class="viewer-ctrl">
+          <button id="pvPrev" type="button" aria-label="Previous page">←</button>
+          <input id="pvRange" type="range" min="1" max="21" value="1" aria-label="Go to page">
+          <button id="pvNext" type="button" aria-label="Next page">→</button>
+        </div>
+        <p class="preview-note">Pages 1–20 of 236</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="inside" style="padding-top:0">
+    <div class="container">
+      <p class="eyebrow">What's inside</p>
+      <h2>31 chapters, five parts.</h2>
+      <p class="lead">From how the island was made to the laws visitors need to know. Big chapters on the monsoons, festivals, hawker culture and Gardens by the Bay, plus every travel essential.</p>
+      <div class="parts">
+        <div class="part"><h3>1 · Understand Singapore</h3><ol><li><b>01</b>The Little Red Dot</li><li><b>02</b>Seven Centuries in Brief</li><li><b>03</b>The Singaporeans</li><li><b>04</b>Wild Singapore</li></ol></div>
+        <div class="part"><h3>2 · The Seasons</h3><ol><li><b>05</b>Singapore Through the Year</li><li><b>06</b>Festivals &amp; Celebrations</li><li><b>07</b>Hawker Culture</li></ol></div>
+        <div class="part"><h3>3 · The Neighbourhoods</h3><ol><li><b>08</b>Marina Bay &amp; Downtown</li><li><b>09</b>Gardens by the Bay</li><li><b>10</b>The Civic District &amp; Singapore River</li><li><b>11</b>Chinatown &amp; Tanjong Pagar</li><li><b>12</b>Little India &amp; Kampong Glam</li><li><b>13</b>Orchard Road, Tanglin &amp; the Botanic Gardens</li><li><b>14</b>Sentosa &amp; the Southern Islands</li><li><b>15</b>The East</li><li><b>16</b>The North</li><li><b>17</b>The West</li></ol></div>
+        <div class="part"><h3>4 · Experiences</h3><ol><li><b>18</b>Eating &amp; Drinking Beyond the Hawkers</li><li><b>19</b>Gardens, Parks &amp; Nature Walks</li><li><b>20</b>Museums, Temples &amp; Heritage</li><li><b>21</b>Shopping</li><li><b>22</b>Singapore After Dark</li><li><b>23</b>Singapore with Kids</li><li><b>24</b>Day Trips Beyond Singapore</li></ol></div>
+        <div class="part"><h3>5 · Plan Your Trip</h3><ol><li><b>25</b>Itineraries</li><li><b>26</b>Getting There</li><li><b>27</b>Entry &amp; Visas</li><li><b>28</b>Getting Around</li><li><b>29</b>Money &amp; Costs</li><li><b>30</b>Where to Stay</li><li><b>31</b>Health, Safety &amp; the Law</li></ol></div>
+        <div class="part"><h3>Plus</h3><ol><li><b>·</b>25 Unmissable Experiences</li><li><b>·</b>Singapore Month by Month</li><li><b>·</b>Speak a Little Singlish</li><li><b>·</b>Emergency &amp; Useful Contacts</li><li><b>·</b>Chapter-by-chapter sources</li></ol></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container split">
+      <img class="maps-img" src="assets/img/preview/p08.jpg" alt="The full-spread map of Singapore from the guide" width="900" height="1359" loading="lazy" decoding="async">
+      <div>
+        <p class="eyebrow">Checked, sourced, dated</p>
+        <h2>Facts you can act on.</h2>
+        <p class="lead">Every price, rule, distance and date in the guide was checked against official and primary sources in October 2026, and an independent second check re-verified the 50 facts travellers rely on most. Sources are listed chapter by chapter at the back.</p>
+        <ul class="ticks">
+          <li>Entry rules: the SG Arrival Card, visa-free transit and customs allowances</li>
+          <li>Getting around: MRT fares (including the December 2026 change), cards and taxis</li>
+          <li>Real costs: hawker meals, attraction prices, GST refunds and hotel averages</li>
+          <li>Laws and safety: vapes, fines, heat, dengue and haze</li>
+          <li>Day trips: the RTS Link, Malaysia's and Indonesia's arrival cards</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <p class="eyebrow center">Questions</p>
+      <h2 class="center">Before you buy</h2>
+      <div class="faq">
+        <details><summary>How do I get the book?</summary><p>Right after checkout you get a download link on screen and by email. You can download it straight away.</p></details>
+        <details><summary>Can I read it on my phone or e-reader?</summary><p>Yes. You get the full magazine layout for tablets and computers, and an easy-reading version that adjusts to any screen, including phones, Kindle, Kobo and Apple Books.</p></details>
+        <details><summary>Can I pay with Apple Pay?</summary><p>Yes. Apple Pay appears at checkout on supported devices. Cards and other payment methods are also accepted.</p></details>
+        <details><summary>How up to date is it?</summary><p>This is the 2027 edition, with information checked in October 2026. Things that change often, like prices, opening hours and entry rules, are dated in the book and point you to the official site to re-check.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final">
+    <img class="bgimg" src="assets/img/hero-skyline-night-1800.jpg" srcset="assets/img/hero-skyline-night-800.jpg 800w, assets/img/hero-skyline-night-1800.jpg 1800w" sizes="100vw" alt="" width="1800" height="1200" loading="lazy" decoding="async">
+    <div class="container">
+      <p class="eyebrow">Discover Singapore · Complete Guide</p>
+      <h2>Your whole trip, in one guide.</h2>
+      <div class="buy">
+        <div class="price">€12.99</div>
+        <a class="applepay" href="https://discover.lemonsqueezy.com/checkout/buy/9058f1b1-a17e-441c-a1f4-b1c349d2bf18" target="_blank" rel="noopener" aria-label="Buy with Apple Pay, €12.99"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.8 2 5.8 1.1 7.4c-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 1.9 2.7 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.6 1-1.5 1.4-2.9 1.4-3-.1 0-2.7-1-2.7-4.3zM11.6 3c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>Pay<small>Buy now</small></a>
+        <a class="btn outline" href="https://discover.lemonsqueezy.com/checkout/buy/9058f1b1-a17e-441c-a1f4-b1c349d2bf18" target="_blank" rel="noopener">Other ways to pay</a>
+        <ul class="assure"><li>Instant download</li><li>Read it anywhere</li><li>Secure checkout</li></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <a class="logo" href="index.html">Discover<b>Singapore</b><i>.</i></a>
+    <p>© 2026 Discover Singapore. Independent travel guides to Singapore.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var TOTAL = 236, PREVIEW = 20, page = 1;
+  var img = document.getElementById("pvImg"), end = document.getElementById("pvEnd");
+  var count = document.getElementById("pvCount"), range = document.getElementById("pvRange");
+  var prev = document.getElementById("pvPrev"), next = document.getElementById("pvNext");
+  var cache = {};
+  function src(n) { return "assets/img/preview/p" + (n < 10 ? "0" : "") + n + ".jpg"; }
+  function preload(n) { if (n >= 1 && n <= PREVIEW && !cache[n]) { cache[n] = new Image(); cache[n].src = src(n); } }
+  function show(n) {
+    page = Math.max(1, Math.min(PREVIEW + 1, n));
+    var isEnd = page > PREVIEW;
+    end.hidden = !isEnd;
+    if (!isEnd) { img.src = src(page); img.alt = "Page " + page + " of Discover Singapore, Complete Guide"; }
+    count.textContent = isEnd ? "Page 20 of " + TOTAL : "Page " + page + " of " + TOTAL;
+    range.value = page;
+    prev.disabled = page === 1;
+    next.disabled = isEnd;
+    preload(page + 1); preload(page + 2);
+  }
+  prev.addEventListener("click", function () { show(page - 1); });
+  next.addEventListener("click", function () { show(page + 1); });
+  range.addEventListener("input", function () { show(parseInt(range.value, 10)); });
+  document.getElementById("pvStage").addEventListener("click", function (e) {
+    if (e.target.closest("a")) return;
+    var r = this.getBoundingClientRect();
+    show(e.clientX - r.left < r.width / 3 ? page - 1 : page + 1);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.target.matches("input, textarea")) return;
+    if (e.key === "ArrowRight") show(page + 1);
+    if (e.key === "ArrowLeft") show(page - 1);
+  });
+  var sx = null;
+  var stage = document.getElementById("pvStage");
+  stage.addEventListener("touchstart", function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener("touchend", function (e) {
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx; sx = null;
+    if (Math.abs(dx) > 40) show(dx < 0 ? page + 1 : page - 1);
+  });
+  show(1);
+})();
+</script>
+</body>
+</html>

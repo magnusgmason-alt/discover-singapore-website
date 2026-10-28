@@ -53,7 +53,7 @@ COVERS = {
     "cover-nomad": "EXPAT & DIGITAL NOMAD EDITION",
 }
 
-PAGE_FILES = ["index.html", "trip.html", "robots.txt", "sitemap.xml"]
+PAGE_FILES = ["index.html", "trip.html", "complete-guide.html", "robots.txt", "sitemap.xml"]
 PAGE_DIRS = ["blog", "static"]
 
 
@@ -109,6 +109,7 @@ def main():
         shutil.copy(ROOT / f, DIST / f)
     for d in PAGE_DIRS:
         shutil.copytree(ROOT / d, DIST / d)
+    shutil.copytree(ROOT / "preview", IMG / "preview")   # book page flip-through (pages 1-20)
 
     version_assets()
 
