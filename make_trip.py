@@ -366,7 +366,7 @@ def trip_data():
     places = {}
     for h in HIGHLIGHTS:
         places[h["id"]] = {"n": h["name"], "a": h["area"], "k": h["kind"], "t": h["tag"], "d": h["desc"],
-                           "q": h["q"], "i": f"/assets/img/{h['img']}-800.jpg" if h["img"] else "",
+                           "q": h["q"], "i": h.get("pimg") or (f"/assets/img/{h['img']}-800.jpg" if h["img"] else ""),
                            "c": h["cats"], "ll": COORDS[h["id"]], "b": GUIDES.get(h["id"], "")}
     return {"places": places, "max": MAX_PLACES}
 
@@ -384,6 +384,7 @@ def map_html():
           <div class="smap-card" id="smapCard" hidden></div>
         </div>
       </div>
+      <p class="smap-all"><a class="btn outline" href="/places">Browse all {len(HIGHLIGHTS)} places with photos</a></p>
       <!--MAP:END-->"""
 
 
@@ -498,7 +499,16 @@ def write_trip_page():
     (ROOT / "trip.html").write_text(page, encoding="utf8")
 
 
+_EXTENDED = False
+
+
 def main():
+    global _EXTENDED
+    if not _EXTENDED:
+        import sys
+        import make_places
+        make_places.extend(sys.modules[__name__])
+        _EXTENDED = True
     update_index()
     write_static()
     write_trip_page()

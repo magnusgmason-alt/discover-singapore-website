@@ -54,7 +54,7 @@ COVERS = {
 }
 
 PAGE_FILES = ["index.html", "trip.html", "complete-guide.html", "robots.txt", "sitemap.xml"]
-PAGE_DIRS = ["blog", "static"]
+PAGE_DIRS = ["blog", "static", "places"]
 
 
 def save_sizes(im, name, widths):
@@ -104,6 +104,9 @@ def main():
     make_trip.main()  # updates index.html highlights, writes trip.html and static/
     import make_articles
     make_articles.main()
+    import make_places
+    make_places.main()   # /places/<id> pages + sitemap entries
+    make_places.build_images(IMG)
 
     for f in PAGE_FILES:
         shutil.copy(ROOT / f, DIST / f)
