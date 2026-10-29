@@ -60,3 +60,9 @@
   .smap-link { font-size: 0.8rem; }
 }
 .smap .leaflet-tile-pane { filter: saturate(0.55) contrast(0.96) brightness(1.03); }
+
+.smap-pic { display: block; }
+.smap-body h3 a { color: inherit; text-decoration: none; }
+.smap-body h3 a:hover { text-decoration: underline; text-decoration-color: var(--red); }
+.smap-more { color: var(--red); }
+.smap-all { margin-top: 18px; text-align: center; }

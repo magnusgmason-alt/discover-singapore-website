@@ -46,11 +46,11 @@
     var maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(p.q);
     card.innerHTML =
       '<button type="button" class="smap-close" aria-label="Close preview">×</button>' +
-      '<div class="smap-pic">' + pic + '<span class="card-tag">' + esc(p.a) + "</span></div>" +
-      '<div class="smap-body"><p class="smap-kind">' + esc(p.k) + "</p><h3>" + esc(p.n) + "</h3><p>" + esc(p.d) + "</p>" +
+      '<a class="smap-pic" href="/places/' + id + '" aria-label="' + esc(p.n) + ': photos and details">' + pic + '<span class="card-tag">' + esc(p.a) + "</span></a>" +
+      '<div class="smap-body"><p class="smap-kind">' + esc(p.k) + "</p><h3><a href=\"/places/" + id + "\">" + esc(p.n) + "</a></h3><p>" + esc(p.d) + "</p>" +
       '<div class="smap-actions"><button class="addt smap-addt" type="button" data-trip="' + id + '" aria-pressed="false"><b>+</b><span>Add to trip</span></button>' +
       '<a class="smap-link" href="' + maps + '" target="_blank" rel="noopener">Google Maps</a>' +
-      (p.b ? '<a class="smap-link" href="/blog/' + p.b + '">Read our guide</a>' : "") +
+      '<a class="smap-link smap-more" href="/places/' + id + '">Photos &amp; details</a>' +
       "</div></div>";
     card.hidden = false;
     if (window.DSTrip) window.DSTrip.refresh();
